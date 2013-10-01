@@ -10,15 +10,19 @@
 		33DD93C217F7075800153793 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33DD93C117F7075800153793 /* Foundation.framework */; };
 		33DD93C517F7075800153793 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 33DD93C417F7075800153793 /* main.m */; };
 		33DD93C917F7075800153793 /* MakerWord.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 33DD93C817F7075800153793 /* MakerWord.1 */; };
+		33DD93D117F72ACB00153793 /* ValidTriples.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 33DD93CF17F728F500153793 /* ValidTriples.txt */; };
+		33DD93D317F7307800153793 /* dictionary.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 33DD93D217F7306E00153793 /* dictionary.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		33DD93BC17F7075800153793 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = /usr/share/man/man1/;
-			dstSubfolderSpec = 0;
+			buildActionMask = 8;
+			dstPath = "";
+			dstSubfolderSpec = 7;
 			files = (
+				33DD93D317F7307800153793 /* dictionary.txt in CopyFiles */,
+				33DD93D117F72ACB00153793 /* ValidTriples.txt in CopyFiles */,
 				33DD93C917F7075800153793 /* MakerWord.1 in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 1;
@@ -31,6 +35,8 @@
 		33DD93C417F7075800153793 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		33DD93C717F7075800153793 /* MakerWord-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MakerWord-Prefix.pch"; sourceTree = "<group>"; };
 		33DD93C817F7075800153793 /* MakerWord.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = MakerWord.1; sourceTree = "<group>"; };
+		33DD93CF17F728F500153793 /* ValidTriples.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ValidTriples.txt; sourceTree = "<group>"; };
+		33DD93D217F7306E00153793 /* dictionary.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dictionary.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +57,7 @@
 				33DD93C317F7075800153793 /* MakerWord */,
 				33DD93C017F7075800153793 /* Frameworks */,
 				33DD93BF17F7075800153793 /* Products */,
+				33DD93D017F728FE00153793 /* Resources */,
 			);
 			sourceTree = "<group>";
 		};
@@ -86,6 +93,15 @@
 				33DD93C717F7075800153793 /* MakerWord-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		33DD93D017F728FE00153793 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				33DD93CF17F728F500153793 /* ValidTriples.txt */,
+				33DD93D217F7306E00153793 /* dictionary.txt */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
