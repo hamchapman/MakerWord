@@ -7,6 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3394A27F180DBE1B001ABDEA /* EasyDoubles.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3394A26D180DBDFD001ABDEA /* EasyDoubles.txt */; };
+		3394A280180DBE1B001ABDEA /* EasyQuads.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3394A26E180DBDFD001ABDEA /* EasyQuads.txt */; };
+		3394A281180DBE1B001ABDEA /* EasyTriples.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3394A26F180DBDFD001ABDEA /* EasyTriples.txt */; };
+		3394A282180DBE1B001ABDEA /* HardDoubles.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3394A270180DBDFD001ABDEA /* HardDoubles.txt */; };
+		3394A283180DBE1B001ABDEA /* HardQuads.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3394A271180DBDFD001ABDEA /* HardQuads.txt */; };
+		3394A284180DBE1B001ABDEA /* HardTriples.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3394A272180DBDFD001ABDEA /* HardTriples.txt */; };
+		3394A285180DBE1B001ABDEA /* ImpossibleDoubles.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3394A273180DBDFD001ABDEA /* ImpossibleDoubles.txt */; };
+		3394A286180DBE1B001ABDEA /* ImpossibleQuads.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3394A274180DBDFD001ABDEA /* ImpossibleQuads.txt */; };
+		3394A287180DBE1B001ABDEA /* ImpossibleTriples.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3394A275180DBDFD001ABDEA /* ImpossibleTriples.txt */; };
+		3394A288180DBE1B001ABDEA /* InsaneDoubles.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3394A276180DBDFD001ABDEA /* InsaneDoubles.txt */; };
+		3394A289180DBE1B001ABDEA /* InsaneQuads.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3394A277180DBDFD001ABDEA /* InsaneQuads.txt */; };
+		3394A28A180DBE1B001ABDEA /* InsaneTriples.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3394A278180DBDFD001ABDEA /* InsaneTriples.txt */; };
+		3394A28B180DBE1B001ABDEA /* MediumDoubles.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3394A279180DBDFD001ABDEA /* MediumDoubles.txt */; };
+		3394A28C180DBE1B001ABDEA /* MediumQuads.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3394A27A180DBDFD001ABDEA /* MediumQuads.txt */; };
+		3394A28D180DBE1B001ABDEA /* MediumTriples.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3394A27B180DBDFD001ABDEA /* MediumTriples.txt */; };
+		3394A28E180DBE1B001ABDEA /* RemedialDoubles.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3394A27C180DBDFD001ABDEA /* RemedialDoubles.txt */; };
+		3394A28F180DBE1B001ABDEA /* RemedialQuads.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3394A27D180DBDFD001ABDEA /* RemedialQuads.txt */; };
+		3394A290180DBE1B001ABDEA /* RemedialTriples.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3394A27E180DBDFD001ABDEA /* RemedialTriples.txt */; };
 		33DD93C217F7075800153793 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33DD93C117F7075800153793 /* Foundation.framework */; };
 		33DD93C517F7075800153793 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 33DD93C417F7075800153793 /* main.m */; };
 		33DD93C917F7075800153793 /* MakerWord.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 33DD93C817F7075800153793 /* MakerWord.1 */; };
@@ -21,6 +39,24 @@
 			dstPath = "";
 			dstSubfolderSpec = 7;
 			files = (
+				3394A27F180DBE1B001ABDEA /* EasyDoubles.txt in CopyFiles */,
+				3394A280180DBE1B001ABDEA /* EasyQuads.txt in CopyFiles */,
+				3394A281180DBE1B001ABDEA /* EasyTriples.txt in CopyFiles */,
+				3394A282180DBE1B001ABDEA /* HardDoubles.txt in CopyFiles */,
+				3394A283180DBE1B001ABDEA /* HardQuads.txt in CopyFiles */,
+				3394A284180DBE1B001ABDEA /* HardTriples.txt in CopyFiles */,
+				3394A285180DBE1B001ABDEA /* ImpossibleDoubles.txt in CopyFiles */,
+				3394A286180DBE1B001ABDEA /* ImpossibleQuads.txt in CopyFiles */,
+				3394A287180DBE1B001ABDEA /* ImpossibleTriples.txt in CopyFiles */,
+				3394A288180DBE1B001ABDEA /* InsaneDoubles.txt in CopyFiles */,
+				3394A289180DBE1B001ABDEA /* InsaneQuads.txt in CopyFiles */,
+				3394A28A180DBE1B001ABDEA /* InsaneTriples.txt in CopyFiles */,
+				3394A28B180DBE1B001ABDEA /* MediumDoubles.txt in CopyFiles */,
+				3394A28C180DBE1B001ABDEA /* MediumQuads.txt in CopyFiles */,
+				3394A28D180DBE1B001ABDEA /* MediumTriples.txt in CopyFiles */,
+				3394A28E180DBE1B001ABDEA /* RemedialDoubles.txt in CopyFiles */,
+				3394A28F180DBE1B001ABDEA /* RemedialQuads.txt in CopyFiles */,
+				3394A290180DBE1B001ABDEA /* RemedialTriples.txt in CopyFiles */,
 				33DD93D317F7307800153793 /* dictionary.txt in CopyFiles */,
 				33DD93D117F72ACB00153793 /* ValidTriples.txt in CopyFiles */,
 				33DD93C917F7075800153793 /* MakerWord.1 in CopyFiles */,
@@ -30,6 +66,24 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3394A26D180DBDFD001ABDEA /* EasyDoubles.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = EasyDoubles.txt; sourceTree = "<group>"; };
+		3394A26E180DBDFD001ABDEA /* EasyQuads.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = EasyQuads.txt; sourceTree = "<group>"; };
+		3394A26F180DBDFD001ABDEA /* EasyTriples.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = EasyTriples.txt; sourceTree = "<group>"; };
+		3394A270180DBDFD001ABDEA /* HardDoubles.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = HardDoubles.txt; sourceTree = "<group>"; };
+		3394A271180DBDFD001ABDEA /* HardQuads.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = HardQuads.txt; sourceTree = "<group>"; };
+		3394A272180DBDFD001ABDEA /* HardTriples.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = HardTriples.txt; sourceTree = "<group>"; };
+		3394A273180DBDFD001ABDEA /* ImpossibleDoubles.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ImpossibleDoubles.txt; sourceTree = "<group>"; };
+		3394A274180DBDFD001ABDEA /* ImpossibleQuads.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ImpossibleQuads.txt; sourceTree = "<group>"; };
+		3394A275180DBDFD001ABDEA /* ImpossibleTriples.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ImpossibleTriples.txt; sourceTree = "<group>"; };
+		3394A276180DBDFD001ABDEA /* InsaneDoubles.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = InsaneDoubles.txt; sourceTree = "<group>"; };
+		3394A277180DBDFD001ABDEA /* InsaneQuads.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = InsaneQuads.txt; sourceTree = "<group>"; };
+		3394A278180DBDFD001ABDEA /* InsaneTriples.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = InsaneTriples.txt; sourceTree = "<group>"; };
+		3394A279180DBDFD001ABDEA /* MediumDoubles.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MediumDoubles.txt; sourceTree = "<group>"; };
+		3394A27A180DBDFD001ABDEA /* MediumQuads.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MediumQuads.txt; sourceTree = "<group>"; };
+		3394A27B180DBDFD001ABDEA /* MediumTriples.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MediumTriples.txt; sourceTree = "<group>"; };
+		3394A27C180DBDFD001ABDEA /* RemedialDoubles.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = RemedialDoubles.txt; sourceTree = "<group>"; };
+		3394A27D180DBDFD001ABDEA /* RemedialQuads.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = RemedialQuads.txt; sourceTree = "<group>"; };
+		3394A27E180DBDFD001ABDEA /* RemedialTriples.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = RemedialTriples.txt; sourceTree = "<group>"; };
 		33DD93BE17F7075800153793 /* MakerWord */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = MakerWord; sourceTree = BUILT_PRODUCTS_DIR; };
 		33DD93C117F7075800153793 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		33DD93C417F7075800153793 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -100,6 +154,24 @@
 			children = (
 				33DD93CF17F728F500153793 /* ValidTriples.txt */,
 				33DD93D217F7306E00153793 /* dictionary.txt */,
+				3394A26D180DBDFD001ABDEA /* EasyDoubles.txt */,
+				3394A26E180DBDFD001ABDEA /* EasyQuads.txt */,
+				3394A26F180DBDFD001ABDEA /* EasyTriples.txt */,
+				3394A270180DBDFD001ABDEA /* HardDoubles.txt */,
+				3394A271180DBDFD001ABDEA /* HardQuads.txt */,
+				3394A272180DBDFD001ABDEA /* HardTriples.txt */,
+				3394A273180DBDFD001ABDEA /* ImpossibleDoubles.txt */,
+				3394A274180DBDFD001ABDEA /* ImpossibleQuads.txt */,
+				3394A275180DBDFD001ABDEA /* ImpossibleTriples.txt */,
+				3394A276180DBDFD001ABDEA /* InsaneDoubles.txt */,
+				3394A277180DBDFD001ABDEA /* InsaneQuads.txt */,
+				3394A278180DBDFD001ABDEA /* InsaneTriples.txt */,
+				3394A279180DBDFD001ABDEA /* MediumDoubles.txt */,
+				3394A27A180DBDFD001ABDEA /* MediumQuads.txt */,
+				3394A27B180DBDFD001ABDEA /* MediumTriples.txt */,
+				3394A27C180DBDFD001ABDEA /* RemedialDoubles.txt */,
+				3394A27D180DBDFD001ABDEA /* RemedialQuads.txt */,
+				3394A27E180DBDFD001ABDEA /* RemedialTriples.txt */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -267,6 +339,7 @@
 				33DD93CE17F7075800153793 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

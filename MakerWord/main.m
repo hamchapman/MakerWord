@@ -14,12 +14,13 @@ typedef enum difficulties {
 } Difficulty;
 
 NSMutableArray *difficultyArrayCreator(Difficulty, NSDictionary *);
-bool guessContainsValidSetOfLetters(NSString *, NSString *);
-bool isCharInString(NSString *, NSString *);
+NSInteger numberOfLettersInSet(NSString *);
+NSArray *letters(NSString *);
+bool lettersAreInWord (NSString *, NSString *);
+NSArray *createArrayOfAppropriateDifficultyAndLengthSetsOfLetters(Difficulty, NSInteger);
 
 int main(int argc, const char * argv[])
 {
-
     @autoreleasepool {
         
         NSBundle *mainBundle = [NSBundle mainBundle];
@@ -35,50 +36,33 @@ int main(int argc, const char * argv[])
         
         NSArray *words = [wordString componentsSeparatedByString:@"\n"];    // Creates an array with all of the words in the dictionary
         
-        NSString *triplesString = [NSString stringWithContentsOfFile:myFile
-                                                            encoding: NSUTF8StringEncoding
-                                                               error:NULL];    // Creates a string containing all triples from file
+        changeNumOfLetters:;
         
-        NSArray *triplesWithOccurrences = [triplesString componentsSeparatedByString:@"\n"];    // Creates an array containing all triples from file
+        char number[100];
+        NSLog(@"Please choose how many letters you would like to be given to form a word using (2, 3, or 4):\n");
+        scanf("%s", number);
+        NSString *chosenNumberOfLetters = [NSString stringWithUTF8String:number];
+        NSInteger numberOfLettersChosen = [chosenNumberOfLetters integerValue];
         
-        NSMutableArray *fixedTriplesWithOccurrences = [[NSMutableArray alloc] init];
-        NSMutableArray *triples = [[NSMutableArray alloc] init];
-        NSMutableDictionary *tripleOccurrences = [[NSMutableDictionary alloc] init];
-        
-        for(NSString *triple in triplesWithOccurrences)
-        {
-            NSString *plainTriple = [triple substringToIndex:5];
-            NSString *numOfOccurrences = [triple substringWithRange:NSMakeRange(6, ([triple length] - 6))];
-            NSString *plainTripleWithSpace = [plainTriple stringByAppendingString:@" "];
-            NSString *reconstructedTripleWithOccurrences = [plainTripleWithSpace stringByAppendingString: [triple substringWithRange:NSMakeRange(5, [triple length] - 5)]];
-            
-            [fixedTriplesWithOccurrences addObject:reconstructedTripleWithOccurrences];
-            
-            [triples addObject:plainTriple];
-            
-            [tripleOccurrences setValue: numOfOccurrences forKey: plainTriple];
-        }
-        
-    change:;
+        changeDifficulty:;
         
         NSLog(@"Please choose your difficulty by typing the approrpiate number:\nremedial = 1 \neasy = 2 \nmedium = 3 \nhard = 4 \ninsane = 5 \nimpossible = 6 \nYour difficulty:");
         
         Difficulty chosenDifficulty;
         scanf("%d", &chosenDifficulty);
         
-        NSMutableArray *chosenDifficultyTriples = [[NSMutableArray alloc] init];
-        
-        chosenDifficultyTriples = difficultyArrayCreator(chosenDifficulty, tripleOccurrences);
+        NSArray *arrayOfAppropriateDifficultyAndLengthSetsOfLetters = createArrayOfAppropriateDifficultyAndLengthSetsOfLetters(chosenDifficulty, numberOfLettersChosen);
         
         bool playAgain = true;
         
         while(playAgain)
         {
             
-            u_int32_t rand = arc4random_uniform((u_int32_t) [chosenDifficultyTriples count]);
-            NSString *randomTriple = [chosenDifficultyTriples objectAtIndex:rand];
+            u_int32_t rand = arc4random_uniform((u_int32_t) [arrayOfAppropriateDifficultyAndLengthSetsOfLetters count]);
+            NSString *randomSetOfLettersWithOccurrences = [arrayOfAppropriateDifficultyAndLengthSetsOfLetters objectAtIndex:rand];
+            NSString *randomSetOfLetters = [randomSetOfLettersWithOccurrences substringToIndex:((numberOfLettersChosen * 2) - 1)];
             
-            NSLog(@"Here are your 3 letters to try and make a word (with the letters being used in the given order): %@", randomTriple);
+            NSLog(@"Here are your letters to try and make a word (with the letters being used in the given order): %@", randomSetOfLetters);
             
             bool guessIsCorrect = false;
             
@@ -86,7 +70,7 @@ int main(int argc, const char * argv[])
             {
                 
                 char string[100];
-                NSLog(@"Enter your attempt (or type n for a new triple, or tellme for an answer):\n");
+                NSLog(@"Enter your attempt (or type n for a new set of letters, or tellme for an answer):\n");
                 scanf("%s", string);
                 
                 NSString *guess = [NSString stringWithUTF8String:string];
@@ -100,7 +84,7 @@ int main(int argc, const char * argv[])
                     
                     for(NSString *word in words)
                     {
-                        if(guessContainsValidSetOfLetters(word, randomTriple))
+                        if(lettersAreInWord(word, randomSetOfLetters))
                         {
                             [possibleAnswers addObject:word];   // Creates an array of all possible answers given a triple
                         }
@@ -122,16 +106,16 @@ int main(int argc, const char * argv[])
                     if([w caseInsensitiveCompare:guess] == NSOrderedSame)       // Checking to see if the guess is in the dictionary
                     {
                         guessIsInDictionary = true;
-                        //NSLog(@"Word is in dictionary");
                     }
                 }
+                
                 if(guessIsInDictionary == true)
                 {
-                    if(guessContainsValidSetOfLetters(guess, randomTriple))
+                    if(lettersAreInWord(guess, randomSetOfLetters))
                     {
-                        NSString *tripleStringFromLetters = [randomTriple stringByReplacingOccurrencesOfString:@" " withString:@""];    // Creates a string of the current triple with no spaces, e.g. "n g y" becomes "ngy"
+                        NSString *spacelessStringOfLetters = [randomSetOfLetters stringByReplacingOccurrencesOfString:@" " withString:@""];    // Creates a string of the current triple with no spaces, e.g. "n g y" becomes "ngy"
                         
-                        if([tripleStringFromLetters caseInsensitiveCompare:guess] != NSOrderedSame)     // Checking to see if guess is just the triple given; if it is, reject
+                        if([spacelessStringOfLetters caseInsensitiveCompare:guess] != NSOrderedSame)
                         {
                             guessIsCorrect = true;
                         }
@@ -141,7 +125,7 @@ int main(int argc, const char * argv[])
                 if(guessIsCorrect == true)
                 {
                     char userPlayAgain[100];
-                    NSLog(@"Correct! \nWould you like to play again? Type y for yes, n for no, or change to change difficulty: ");
+                    NSLog(@"Correct! \nWould you like to play again? Type: \ny for yes\nn for no\ndiff to change difficulty\nnum to change number of letters: ");
                     scanf("%s", userPlayAgain);
                     NSString *userInputForPlayAgain = [NSString stringWithUTF8String:userPlayAgain];
                     
@@ -150,10 +134,13 @@ int main(int argc, const char * argv[])
                         goto finish;
                         playAgain = false;
                     }
-                    
-                    if([userInputForPlayAgain isEqual: @"change"])
+                    else if([userInputForPlayAgain isEqual: @"diff"])
                     {
-                        goto change;
+                        goto changeDifficulty;
+                    }
+                    else if ([userInputForPlayAgain isEqual: @"num"])
+                    {
+                        goto changeNumOfLetters;
                     }
                 }
                 else
@@ -169,105 +156,88 @@ int main(int argc, const char * argv[])
     return 0;
 }
 
-
-NSMutableArray *difficultyArrayCreator(Difficulty chosenDifficulty, NSDictionary *tripleOccurrences)
+NSArray *createArrayOfAppropriateDifficultyAndLengthSetsOfLetters(Difficulty chosenDifficulty, NSInteger numberOfLettersToPlayWith)
 {
-    NSMutableArray *triples = [[NSMutableArray alloc] init];
+    NSString *typeOfSetOfLetters = [[NSString alloc] init];
     
-    int upperLimit = 0;
-    int lowerLimit = 0;
+    if (numberOfLettersToPlayWith == 2)
+    {
+        typeOfSetOfLetters = @"Doubles";
+    }
+    else if (numberOfLettersToPlayWith == 3)
+    {
+        typeOfSetOfLetters = @"Triples";
+    }
+    else
+    {
+        typeOfSetOfLetters = @"Quads";
+    }
+    
+    NSString *difficulty = [[NSString alloc] init];
     
     switch (chosenDifficulty)
     {
         case remedial:
-            upperLimit = 100000;
-            lowerLimit = 10000;
+            difficulty = @"Remedial";
             break;
         case easy:
-            upperLimit = 10000;
-            lowerLimit = 5000;
+            difficulty = @"Easy";
             break;
         case medium:
-            upperLimit = 5000;
-            lowerLimit = 1000;
+            difficulty = @"Medium";
             break;
         case hard:
-            upperLimit = 1000;
-            lowerLimit = 250;
+            difficulty = @"Hard";
             break;
         case insane:
-            upperLimit = 250;
-            lowerLimit = 10;
+            difficulty = @"Insane";
             break;
         case impossible:
-            upperLimit = 10;
-            lowerLimit = 0;
+            difficulty = @"Impossible";
             break;
         default:
-            upperLimit = 100000;
-            lowerLimit = 0;
+            difficulty = @"Easy";
             break;
     }
     
-    for(NSString *key in tripleOccurrences)
-    {
-        NSNumberFormatter * f = [[NSNumberFormatter alloc] init];
-        [f setNumberStyle:NSNumberFormatterDecimalStyle];
-        NSNumber * numOfOccs = [f numberFromString:tripleOccurrences[key]];
-        
-        NSNumber *lowLimit = [NSNumber numberWithInteger:lowerLimit];
-        NSNumber *uppLimit = [NSNumber numberWithInteger:upperLimit];
-        
-        if(numOfOccs > lowLimit && numOfOccs < uppLimit)
-        {
-            [triples addObject:key];
-        }
-    }
+    NSBundle *mainBundle = [NSBundle mainBundle];
+    NSString *nameOfFile = [NSString stringWithFormat: @"%@%@", difficulty, typeOfSetOfLetters];
+    NSString *myFile = [mainBundle pathForResource: nameOfFile
+                                            ofType: @"txt"];
     
-    return triples;
+    NSString *lettersAndOccurrencesString = [NSString stringWithContentsOfFile:myFile
+                                                        encoding: NSUTF8StringEncoding
+                                                           error:NULL];
+    
+    NSArray *arrayOfAppropriateDifficultyAndLengthSetsOfLetters = [lettersAndOccurrencesString componentsSeparatedByString:@"\n"];
+    return arrayOfAppropriateDifficultyAndLengthSetsOfLetters;
 }
 
-
-bool isCharInString(NSString *charToCheck, NSString *stringToCheckForChar)
+NSInteger numberOfLettersInSet(NSString *setOfLetters)
 {
-    return [stringToCheckForChar rangeOfString:charToCheck options:NSCaseInsensitiveSearch].location != NSNotFound;
+    return [letters(setOfLetters) count];
 }
 
-
-bool guessContainsValidSetOfLetters(NSString *guess, NSString *setOfLetters)
+NSArray *letters(NSString *setOfLetters)
 {
-    bool validGuess = false;
-    
-    NSInteger numOfLettersInSet = setOfLetters.length - (setOfLetters.length / 2);
-    NSInteger numOfCurrentLetter = 1;
-    NSString *stringToCheckForChar = guess;
-    
-    while(!validGuess && numOfCurrentLetter <= numOfLettersInSet)
+    return [setOfLetters componentsSeparatedByString:@" "];
+}
+
+bool lettersAreInWord (NSString *word, NSString *setOfLetters)
+{
+    if(setOfLetters.length == 1)
     {
-        NSRange letterToCheck = {2 * numOfCurrentLetter - 2, 1};
-        NSString *charToCheck = [setOfLetters substringWithRange:letterToCheck];
-        NSInteger letterLocationInWord = [guess rangeOfString:[setOfLetters substringWithRange:letterToCheck] options:NSCaseInsensitiveSearch].location;
-        
-        if(isCharInString(charToCheck, stringToCheckForChar))
-        {
-            if((letterLocationInWord == [guess length] - 1) && numOfCurrentLetter < numOfLettersInSet)
-            {
-                return validGuess;
-            }
-            
-            NSRange rangeToCheckNext = {letterLocationInWord + 1, [guess length] - (letterLocationInWord+ 1)};
-            stringToCheckForChar = [guess substringWithRange:rangeToCheckNext];
-            
-            if(numOfCurrentLetter == numOfLettersInSet)
-            {
-                validGuess = true;
-            }
-        }
-        else
-        {
-            return validGuess;
-        }
-        numOfCurrentLetter++;
+        return [word rangeOfString:setOfLetters options:NSCaseInsensitiveSearch].location != NSNotFound;
     }
-    return validGuess;
+    
+    if([word rangeOfString:[setOfLetters substringToIndex:1] options:NSCaseInsensitiveSearch].location != NSNotFound)
+    {
+        NSString *newWord = [word substringFromIndex:[word rangeOfString:[setOfLetters substringToIndex:1] options:NSCaseInsensitiveSearch].location + 1];
+        word = [word substringFromIndex:[word rangeOfString:[setOfLetters substringToIndex:1] options:NSCaseInsensitiveSearch].location];
+        return lettersAreInWord(newWord, [setOfLetters substringFromIndex:2]);
+    }
+    else
+    {
+        return false;
+    }
 }
